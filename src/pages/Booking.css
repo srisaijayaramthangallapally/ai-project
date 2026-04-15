@@ -1,0 +1,168 @@
+/* Booking.css */
+.booking-page {
+  padding: 110px 0 80px;
+  min-height: 100vh;
+}
+
+.booking-page__layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 40px;
+  align-items: start;
+}
+
+.booking-page__back {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  cursor: pointer;
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.booking-page__back:hover {
+  color: var(--color-accent);
+}
+
+/* ── Booking Summary Sidebar ─────────────────────────────────────────────── */
+.booking-summary {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: sticky;
+  top: 100px;
+}
+
+.booking-summary__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 22px 22px 0;
+  margin-bottom: 16px;
+}
+
+.booking-summary__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.booking-summary__details {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.booking-summary__name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.booking-summary__location {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.booking-summary__rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.booking-summary__reviews {
+  color: var(--color-text-muted);
+  font-weight: 400;
+  font-size: 0.78rem;
+}
+
+.booking-summary__flight-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--color-surface-2);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  margin-top: 6px;
+}
+
+.flight-info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.flight-info-row span {
+  color: var(--color-text-muted);
+}
+
+.flight-info-row strong {
+  color: var(--color-text);
+}
+
+.booking-summary__amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+/* ── Price Breakdown ─────────────────────────────────────────────────────── */
+.booking-summary__price-box {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.price-row--total {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border);
+  margin-top: 4px;
+}
+
+.price-row--total span:last-child {
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+/* ── Trust Badges ────────────────────────────────────────────────────────── */
+.booking-summary__trust {
+  padding: 16px 22px;
+  display: flex;
+  gap: 16px;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .booking-page__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-summary {
+    position: static;
+    order: -1; /* Show summary above the form on mobile */
+  }
+}

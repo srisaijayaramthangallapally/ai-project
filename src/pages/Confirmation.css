@@ -1,0 +1,201 @@
+/* Confirmation.css */
+.confirmation-page {
+  padding: 110px 0 80px;
+  min-height: 100vh;
+}
+
+.confirmation-page__inner {
+  max-width: 860px;
+  text-align: center;
+}
+
+/* ── Animated Checkmark ──────────────────────────────────────────────────── */
+.confirmation-check {
+  margin: 0 auto 32px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.confirmation-check--visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.confirmation-check__circle {
+  width: 88px;
+  height: 88px;
+  background: rgba(74, 222, 128, 0.1);
+  border: 2px solid rgba(74, 222, 128, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.confirmation-check__svg {
+  width: 52px;
+  height: 52px;
+}
+
+.confirmation-check__svg circle {
+  stroke: rgba(74, 222, 128, 0.3);
+  stroke-width: 2;
+}
+
+/* Animated drawing of the checkmark */
+.confirmation-check__mark {
+  stroke: var(--color-success);
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: drawCheck 0.5s 0.5s ease forwards;
+}
+
+@keyframes drawCheck {
+  to { stroke-dashoffset: 0; }
+}
+
+.confirmation-page__heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.confirmation-page__subheading {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* ── Booking ID Banner ───────────────────────────────────────────────────── */
+.booking-id-banner {
+  background: linear-gradient(135deg, rgba(232, 184, 109, 0.1), rgba(124, 106, 245, 0.1));
+  border: 1px solid rgba(232, 184, 109, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.booking-id-banner__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.booking-id-banner__id {
+  font-family: 'Courier New', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.12em;
+}
+
+.booking-id-banner__hint {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Confirmation Grid ───────────────────────────────────────────────────── */
+.confirmation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.confirmation-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+/* Wide card spans full width */
+.confirmation-card--wide {
+  grid-column: 1 / -1;
+}
+
+.confirmation-card__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.confirmation-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.confirmation-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 0.88rem;
+  gap: 16px;
+}
+
+.confirmation-row span {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.confirmation-row strong {
+  text-align: right;
+  color: var(--color-text);
+  word-break: break-word;
+}
+
+.confirmation-row--total {
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+  margin-top: 4px;
+}
+
+.confirmation-row--total span {
+  font-weight: 700;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.confirmation-row--total strong {
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+}
+
+/* ── Action Buttons ──────────────────────────────────────────────────────── */
+.confirmation-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .confirmation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .confirmation-card--wide {
+    grid-column: 1;
+  }
+
+  .booking-id-banner__id {
+    font-size: 1.5rem;
+  }
+}

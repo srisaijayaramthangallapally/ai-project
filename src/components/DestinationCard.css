@@ -1,0 +1,119 @@
+/* DestinationCard.css */
+.dest-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.dest-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(232, 184, 109, 0.2);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+.dest-card__img-wrap {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.dest-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.dest-card:hover .dest-card__img {
+  transform: scale(1.06);
+}
+
+.dest-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,15,0.6) 0%, transparent 60%);
+}
+
+.dest-card__tag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.dest-card__body {
+  padding: 22px;
+}
+
+.dest-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.dest-card__name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.dest-card__country {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.dest-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: rgba(232, 184, 109, 0.1);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.dest-card__desc {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dest-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dest-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.dest-card__price-from,
+.dest-card__price-unit {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.dest-card__price-amount {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+}
+
+.dest-card__btn {
+  padding: 10px 20px;
+  font-size: 0.85rem;
+}
